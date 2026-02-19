@@ -8,7 +8,6 @@ public class MovementScript : MonoBehaviour
     private Rigidbody2D rb;
     public float speed = 3f;
     private float inputX;
-    bool facingRight = true;
 
     [InspectorLabel("Ground detection")]
     [SerializeField] private Transform groundCheck;
@@ -41,20 +40,6 @@ public class MovementScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
 
-    }
-    //----- Input methods -----\\
-    
-    public void Jump(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            jump = true;
-            //jumpBufferCounter = jumpBufferTime;
-        }
-        if (context.canceled)
-        {
-            jump = false;
-        }
     }
     
     //----- Physics update -----\\
