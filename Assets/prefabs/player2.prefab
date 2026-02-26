@@ -22,7 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4486878435803404061, guid: aa8b4b95fb298d3409ef9053e536cfc4, type: 3}
       propertyPath: m_Name
-      value: Player2
+      value: player2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4486878435803404061, guid: aa8b4b95fb298d3409ef9053e536cfc4, type: 3}
+      propertyPath: m_TagString
+      value: player2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6660531593763362412, guid: aa8b4b95fb298d3409ef9053e536cfc4, type: 3}
+      propertyPath: playerID
+      value: P2
       objectReference: {fileID: 0}
     - target: {fileID: 9033105540008867237, guid: aa8b4b95fb298d3409ef9053e536cfc4, type: 3}
       propertyPath: m_LocalPosition.x

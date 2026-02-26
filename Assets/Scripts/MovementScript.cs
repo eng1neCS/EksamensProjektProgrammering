@@ -28,7 +28,7 @@ public class MovementScript : MonoBehaviour
     void Update()
     {
         float move = Input.GetAxisRaw("Horizontal"+playerID);
-        Debug.Log("test: x = " + move);
+       
         rb.linearVelocity = new Vector2(move * speed, rb.linearVelocity.y);
 
         if (IsGrounded())

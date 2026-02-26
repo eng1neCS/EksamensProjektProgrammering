@@ -45,8 +45,8 @@ GameObject:
   - component: {fileID: 2397871867203786812}
   - component: {fileID: 6660531593763362412}
   m_Layer: 0
-  m_Name: Player1
-  m_TagString: Player
+  m_Name: player1
+  m_TagString: player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -201,6 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b073a9825e91984fbe50ea7781b269b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovementScript
+  playerID: P1
   speed: 3
   jumpForce: 5
   groundCheckRadius: 0.2
