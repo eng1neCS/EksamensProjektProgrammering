@@ -1,111 +1,65 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class MovementScript : MonoBehaviour
-{
-    private Rigidbody2D rb;
-    public float speed = 3f;
-    private float inputX;
+{ 
+    [SerializeField] float speed = 5f;
+    [SerializeField] float jumpForce = 7f;
+    [SerializeField] float groundCheckRadius = 2f;
 
-    [InspectorLabel("Ground detection")]
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private float groundCheckRadius = 0.2f;
-    [SerializeField] private LayerMask groundLayer = (1 << 6);
-    [SerializeField] private bool isGrounded;
-
-    [InspectorLabel("Extended Jumping")]
-    [SerializeField] float jumpForce = 5f;
-    bool isJumping;
-    [SerializeField] float jumpTime = 0.5f;
-    float jumpTimeLeft;
-
-    [InspectorLabel("Coyote time and jumpbuffer")]
     [SerializeField] private float coyoteTime = 0.2f;
     float coyoteTimeLeft;
     [SerializeField] float jumpBufferTime = 0.2f;
-    [SerializeField] float jumpBufferCounter;
-    bool jump = false;
+    float jumpBufferCounter;
 
- 
-    
 
-    private bool playerisDead = false;
-    public void SetPlayerDead(bool val)
-    {
-        playerisDead = val;
-    }
-    private void Start()
+    public LayerMask groundLayer;
+
+    Rigidbody2D rb;
+    public Transform groundCheck;
+
+
+    void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-    }
-    
-    //----- Physics update -----\\
-    private void FixedUpdate()
-    {
-       
-        PlayerJump();
     }
 
-    //----- Movement -----\\
-    private void MovingPlayer()
+    void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(inputX * speed, rb.linearVelocity.y);
+        float move = Input.GetAxis("Horizontal");
+        rb.linearVelocity = new Vector2(move * speed, rb.linearVelocity.y);
 
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-        if (rb.linearVelocity.y < 0f)
+        if (IsGrounded())
         {
-            rb.linearVelocity += Vector2.up * (Physics2D.gravity.y * 1.5f * Time.fixedDeltaTime);
-        }
-    }
-    //----- Jumping methods -----\\
-    private void PlayerJump()
-    {
-        //Coyote time 
-        if (isGrounded)
-        {
-        
             coyoteTimeLeft = coyoteTime;
         }
         else
         {
-            coyoteTimeLeft -= Time.deltaTime;
+            coyoteTimeLeft -= Time.fixedDeltaTime;
         }
 
-        //Jump buffer (for missclicked jumps)
-        if (jump)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             jumpBufferCounter = jumpBufferTime;
         }
         else
         {
-            jumpBufferCounter -= Time.deltaTime;
+            jumpBufferCounter -= Time.fixedDeltaTime;
         }
-        //Jump mechanics
+
         if (jumpBufferCounter > 0f && coyoteTimeLeft > 0f)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-            isJumping = true;
-            jumpTimeLeft = jumpTime;
             coyoteTimeLeft = 0;
             jumpBufferCounter = 0;
-
-        }
-        //Holding jump (longer jumps)
-        if (jump && isJumping)
-        {
-            if (jumpTimeLeft > 0)
-            {
-                jumpTimeLeft -= Time.deltaTime;
-                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-            }
-        }
-        //stop jumping
-        if (!jump)
-        {
-            isJumping = false;
         }
     }
+
+
+    private bool IsGrounded()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+    }
+
 }
