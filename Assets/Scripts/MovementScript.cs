@@ -1,9 +1,11 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class MovementScript : MonoBehaviour
 { 
+    [SerializeField] private string playerID = "P1";
     [SerializeField] float speed = 5f;
     [SerializeField] float jumpForce = 7f;
     [SerializeField] float groundCheckRadius = 2f;
@@ -18,8 +20,6 @@ public class MovementScript : MonoBehaviour
 
     Rigidbody2D rb;
     public Transform groundCheck;
-
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -27,7 +27,8 @@ public class MovementScript : MonoBehaviour
 
     void Update()
     {
-        float move = Input.GetAxis("Horizontal");
+        float move = Input.GetAxisRaw("Horizontal"+playerID);
+        Debug.Log("test: x = " + move);
         rb.linearVelocity = new Vector2(move * speed, rb.linearVelocity.y);
 
         if (IsGrounded())
@@ -39,7 +40,7 @@ public class MovementScript : MonoBehaviour
             coyoteTimeLeft -= Time.fixedDeltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetButtonDown("Jump"+playerID))
         {
             jumpBufferCounter = jumpBufferTime;
         }
