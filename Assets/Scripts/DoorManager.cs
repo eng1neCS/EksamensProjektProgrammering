@@ -2,36 +2,52 @@ using UnityEngine;
 
 public class DoorManager : MonoBehaviour
 {
-    [SerializeField] new GameObject DoorP1;
-    [SerializeField] new GameObject DoorP2;
+    [SerializeField] private string DoorID = "Door1";
+    [SerializeField] private string playerID = "P2";
 
     [SerializeField] bool isDoorOpen = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
       
-        if (collision.CompareTag("Player1") || collision.CompareTag("Player2"))
+        if (collision.CompareTag("Player"))
         {
             //if (!isDoorOpen)
             //{
             //    OpenDoor();
             //}
-            if (DoorP1 != null && collision.CompareTag("Player1"))
+            if (DoorID != null)
             {
-                // Play Door 1 animation
-                Debug.Log("Player 1 entered the door trigger");
-            }
-            else if (DoorP2 != null && collision.CompareTag("Player2"))
-            {
-                // Play Door 2 animation
-                Debug.Log("Player 2 entered the door trigger");
-            }
-            
+                if (collision.GetComponent<MovementScript>().PlayerID == playerID)
+                {
 
+                }
+                // Play Door animation
+                isDoorOpen = true;
+                Debug.Log(playerID + " has entered the" + DoorID + "trigger");
+                transform.parent.GetComponent<GameManager>()?.DoorOpened(1);
+            }
+
+           
         }
-
     }
-
+    
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            if (DoorID != null)
+            {
+                if (collision.GetComponent<MovementScript>().PlayerID == playerID)
+                {
+                }
+                // Play Door animation
+                isDoorOpen = false;
+                Debug.Log(playerID + " has exited the" + DoorID + "trigger");
+                transform.parent.GetComponent<GameManager>()?.DoorOpened(-1);
+            }
+        }
+    }
 
     //private void OpenDoor()
     //{

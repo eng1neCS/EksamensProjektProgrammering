@@ -16,6 +16,8 @@ public class MovementScript : MonoBehaviour
     float jumpBufferCounter;
 
 
+    public string PlayerID { get => playerID;}
+
     public LayerMask groundLayer;
 
     Rigidbody2D rb;
