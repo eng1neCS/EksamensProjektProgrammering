@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6411772931317601427}
   - component: {fileID: 1641822486719585490}
   - component: {fileID: 6367246912284001472}
+  - component: {fileID: 5383839037328707487}
   m_Layer: 0
   m_Name: WaterDoor
   m_TagString: Untagged
@@ -137,6 +138,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5383839037328707487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3298471264604808911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b620bb2584037e14290612343b455f05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorManager
+  DoorID: Door1
+  playerID: P1
+  isDoorOpen: 0
 --- !u!1 &3418010909823282110
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,6 +164,7 @@ GameObject:
   - component: {fileID: 9070946636680357390}
   - component: {fileID: 2437599220298676428}
   - component: {fileID: 65471240955978938}
+  - component: {fileID: 2796544166615026321}
   m_Layer: 0
   m_Name: FireDoor
   m_TagString: Untagged
@@ -274,6 +291,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2796544166615026321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3418010909823282110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b620bb2584037e14290612343b455f05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorManager
+  DoorID: Door 2
+  playerID: P2
+  isDoorOpen: 0
 --- !u!1 &4910458167559399038
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,7 +315,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7184603000845075200}
-  - component: {fileID: 8810221845042959350}
+  - component: {fileID: 2091880237888615078}
   m_Layer: 0
   m_Name: DoorManager
   m_TagString: Untagged
@@ -308,7 +340,7 @@ Transform:
   - {fileID: 6411772931317601427}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8810221845042959350
+--- !u!114 &2091880237888615078
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -317,9 +349,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4910458167559399038}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b620bb2584037e14290612343b455f05, type: 3}
+  m_Script: {fileID: 11500000, guid: cc0052ee0a5d53047b3390e2e31e0e37, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DoorManager
-  DoorP1: {fileID: 3418010909823282110}
-  DoorP2: {fileID: 3298471264604808911}
-  isDoorOpen: 0
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  levelToLoad: Levels
