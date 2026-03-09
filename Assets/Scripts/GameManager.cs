@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject Win_Canvas;
     private int doorCount = 2;
     private int currentDoorsOpened = 0;
     [SerializeField] private string levelToLoad = "Levels";
@@ -11,7 +12,7 @@ public class GameManager : MonoBehaviour
         currentDoorsOpened += val;
         if (currentDoorsOpened == doorCount)
         {
-            SceneManager.LoadScene(levelToLoad);
+            Win_Canvas.SetActive(true);
         }
     }
 }

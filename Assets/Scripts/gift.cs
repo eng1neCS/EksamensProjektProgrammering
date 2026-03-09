@@ -8,9 +8,9 @@ public class gift : MonoBehaviour
     [SerializeField] private string level;
   
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("player1") || other.CompareTag("player2"))
+        if (collision.CompareTag("Player"))
         {
             SceneManager.LoadScene(level);
         }

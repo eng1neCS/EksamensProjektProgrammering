@@ -6,35 +6,37 @@ public class Lava : MonoBehaviour
 
     private bool player1cooked = false;
     [SerializeField] private string level;
+    [SerializeField] private string playerID;
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("player1"))
+        if (collision.CompareTag("Player"))
         {
+            if (collision.GetComponent<MovementScript>().PlayerID == playerID)
+            {
+                Debug.Log(playerID + " is dead ");
+                player1cooked = true;
+            }
 
-            player1cooked = true;
 
         }
         isCooked();
     }
 
 
-    void OnTriggerExit2D(Collider2D other)
+    void OnTriggerExit2D(Collider2D collision)
     {
-        if (other.CompareTag("player1"))
+        if (collision.CompareTag("Player"))
         {
-
-            player1cooked = false;
+            if (collision.GetComponent<MovementScript>().PlayerID == playerID)
+            {
+                Debug.Log(playerID + " is dead ");
+                player1cooked = true;
+            }
 
         }
-       
+
     }
-
-
-
-
-
-
 
 
 

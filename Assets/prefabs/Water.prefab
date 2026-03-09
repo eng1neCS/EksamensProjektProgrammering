@@ -104,6 +104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dff6379f5262d8458206704d59768a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Water
+  level: Bane_1
+  playerID: P2
 --- !u!61 &7063328342913271103
 BoxCollider2D:
   m_ObjectHideFlags: 0
