@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b620bb2584037e14290612343b455f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorManager
-  DoorID: D1
+  DoorID: Door1
   playerID: P1
   isDoorOpen: 0
 --- !u!1001 &503255378
@@ -468,6 +468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc0052ee0a5d53047b3390e2e31e0e37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  levelToLoad: Levels
 --- !u!1001 &936123630
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -546,7 +547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b620bb2584037e14290612343b455f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorManager
-  DoorID: D2
+  DoorID: Door2
   playerID: P2
   isDoorOpen: 0
 --- !u!1 &1398495359

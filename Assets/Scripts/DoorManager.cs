@@ -20,12 +20,12 @@ public class DoorManager : MonoBehaviour
             {
                 if (collision.GetComponent<MovementScript>().PlayerID == playerID)
                 {
-
+                    // Play Door animation
+                    isDoorOpen = true;
+                    Debug.Log(playerID + " has entered the" + DoorID + "trigger");
+                    transform.parent.GetComponent<GameManager>()?.DoorOpened(1);
                 }
-                // Play Door animation
-                isDoorOpen = true;
-                Debug.Log(playerID + " has entered the" + DoorID + "trigger");
-                transform.parent.GetComponent<GameManager>()?.DoorOpened(1);
+                
             }
 
            
@@ -40,11 +40,12 @@ public class DoorManager : MonoBehaviour
             {
                 if (collision.GetComponent<MovementScript>().PlayerID == playerID)
                 {
+                    // Play Door animation
+                    isDoorOpen = false;
+                    Debug.Log(playerID + " has exited the" + DoorID + "trigger");
+                    transform.parent.GetComponent<GameManager>()?.DoorOpened(-1);
                 }
-                // Play Door animation
-                isDoorOpen = false;
-                Debug.Log(playerID + " has exited the" + DoorID + "trigger");
-                transform.parent.GetComponent<GameManager>()?.DoorOpened(-1);
+                
             }
         }
     }
