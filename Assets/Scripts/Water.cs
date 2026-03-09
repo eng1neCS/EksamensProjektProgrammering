@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Water : MonoBehaviour
 {
 
     private bool player2cooked = false;
-
+    [SerializeField] private string level;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -37,7 +38,7 @@ public class Water : MonoBehaviour
         if (player2cooked)
 
         {
-            Debug.Log("player 2 død");
+            SceneManager.LoadScene(level);
         }
 
 

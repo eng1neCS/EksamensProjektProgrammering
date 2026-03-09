@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Lava : MonoBehaviour
 {
 
     private bool player1cooked = false;
-
+    [SerializeField] private string level;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -43,7 +44,7 @@ public class Lava : MonoBehaviour
         if (player1cooked)
 
         {
-            Debug.Log("player 1 død");
+            SceneManager.LoadScene(level);
         }
 
 
