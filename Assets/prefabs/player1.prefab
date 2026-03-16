@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 6660531593763362412}
   m_Layer: 0
   m_Name: player1
-  m_TagString: player1
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,7 +140,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2.5
   m_Material: {fileID: 6200000, guid: f66c17339af7bed4da7060eeafa0b7fd, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MovementScript
   playerID: P1
   speed: 5
-  jumpForce: 8
+  jumpForce: 14
   groundCheckRadius: 0.2
   coyoteTime: 0.4
   jumpBufferTime: 0.4
