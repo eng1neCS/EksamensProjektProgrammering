@@ -534,6 +534,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6660531593763362412, guid: aa8b4b95fb298d3409ef9053e536cfc4, type: 3}
+      propertyPath: jumpForce
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 9033105540008867237, guid: aa8b4b95fb298d3409ef9053e536cfc4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -17.31
@@ -823,6 +827,10 @@ PrefabInstance:
     - target: {fileID: 6872941294982202150, guid: 19738768d673e514ab3592591904858e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9102733769749061871, guid: 19738768d673e514ab3592591904858e, type: 3}
+      propertyPath: jumpForce
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1124,6 +1132,14 @@ PrefabInstance:
       propertyPath: Win_Canvas
       value: 
       objectReference: {fileID: 1635684667}
+    - target: {fileID: 2437599220298676428, guid: deff3d3d72648d347a411b78d098bbc8, type: 3}
+      propertyPath: m_Color.g
+      value: 0.46274513
+      objectReference: {fileID: 0}
+    - target: {fileID: 2437599220298676428, guid: deff3d3d72648d347a411b78d098bbc8, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9960785
+      objectReference: {fileID: 0}
     - target: {fileID: 4910458167559399038, guid: deff3d3d72648d347a411b78d098bbc8, type: 3}
       propertyPath: m_Name
       value: DoorManager
