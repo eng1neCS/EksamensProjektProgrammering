@@ -32,8 +32,8 @@ public class MovementScript : MonoBehaviour
 
     void Update()
     {
-        float move = Input.GetAxisRaw("Horizontal"+playerID);
-       
+        float move = Input.GetAxisRaw("Horizontal" + playerID);
+
         rb.linearVelocity = new Vector2(move * speed, rb.linearVelocity.y);
 
         if (IsGrounded())
@@ -45,7 +45,7 @@ public class MovementScript : MonoBehaviour
             coyoteTimeLeft -= Time.fixedDeltaTime;
         }
 
-        if (Input.GetButtonDown("Jump"+playerID))
+        if (Input.GetButtonDown("Jump" + playerID))
         {
             jumpBufferCounter = jumpBufferTime;
         }
@@ -61,6 +61,29 @@ public class MovementScript : MonoBehaviour
             jumpBufferCounter = 0;
         }
 
+        if (move > 0)
+        {
+            if (playerID == "P1")
+            {
+                gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            }
+            else if (playerID == "P2")
+            {
+                gameObject.transform.localScale = new Vector3(1, 1, 1);
+            }
+        }
+        else if (move < 0)
+        {
+            if (playerID == "P1")
+            {
+                gameObject.transform.localScale = new Vector3(-0.5f, 0.5f, 0.5f);
+            }
+            else if (playerID == "P2")
+            {
+                gameObject.transform.localScale = new Vector3(-1, 1, 1);
+            }
+        }
+
         //if (Input.GetButtonDown("Preset1"))
         //{
         //    float jumpForce = 14f;
@@ -72,7 +95,7 @@ public class MovementScript : MonoBehaviour
         //    float jumpForce = 17f;
         //    float g = 3.5f;
         //}
-        
+
         //if (Input.GetButtonDown("Preset3"))
         //{
         //    float jumpForce = 10f;
