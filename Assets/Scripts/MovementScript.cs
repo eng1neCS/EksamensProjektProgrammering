@@ -63,22 +63,22 @@ public class MovementScript : MonoBehaviour
         {
             if (playerID == "P1")
             {
-                gameObject.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+                gameObject.transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
             }
             else if (playerID == "P2")
             {
-                gameObject.transform.localScale = new Vector3(1, 1, 1);
+                gameObject.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
             }
         }
         else if (move < 0)
         {
             if (playerID == "P1")
             {
-                gameObject.transform.localScale = new Vector3(-0.5f, 0.5f, 0.5f);
+                gameObject.transform.localScale = new Vector3(-0.75f, 0.75f, 0.75f);
             }
             else if (playerID == "P2")
             {
-                gameObject.transform.localScale = new Vector3(-1, 1, 1);
+                gameObject.transform.localScale = new Vector3(-1.5f, 1.5f, 1.5f);
             }
         }
 
