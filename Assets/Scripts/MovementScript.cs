@@ -21,13 +21,11 @@ public class MovementScript : MonoBehaviour
     public LayerMask groundLayer;
 
     Rigidbody2D rb;
-    //float g = 2f;
+    
     public Transform groundCheck;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        //Debug.Log(g);
     }
 
     void Update()
@@ -101,6 +99,7 @@ public class MovementScript : MonoBehaviour
         //    float jumpForce = 10f;
         //    float g = 2.5f;
         //}
+
     }
 
 
@@ -108,5 +107,4 @@ public class MovementScript : MonoBehaviour
     {
         return Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
-
 }
