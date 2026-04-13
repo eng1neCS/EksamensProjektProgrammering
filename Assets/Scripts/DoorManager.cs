@@ -21,7 +21,8 @@ public class DoorManager : MonoBehaviour
                 if (collision.GetComponent<MovementScript>().PlayerID == playerID)
                 {
                     // Play Door animation
-                    isDoorOpen = true;
+                    CancelInvoke(nameof(IsDoorOpen));
+                    Invoke(nameof(IsDoorOpen), 2f);
                     Debug.Log(playerID + " has entered the" + DoorID + "trigger");
                     transform.parent.GetComponent<GameManager>()?.DoorOpened(1);
                 }
@@ -41,7 +42,8 @@ public class DoorManager : MonoBehaviour
                 if (collision.GetComponent<MovementScript>().PlayerID == playerID)
                 {
                     // Play Door animation
-                    isDoorOpen = false;
+                    CancelInvoke(nameof(IsDoorClosed));
+                    Invoke(nameof(IsDoorClosed), 1f);
                     Debug.Log(playerID + " has exited the" + DoorID + "trigger");
                     transform.parent.GetComponent<GameManager>()?.DoorOpened(-1);
                 }
@@ -49,6 +51,19 @@ public class DoorManager : MonoBehaviour
             }
         }
     }
+    
+    void IsDoorOpen()
+    {
+        isDoorOpen = true;
+    }
+    
+    void IsDoorClosed()
+    {
+        isDoorOpen = false;
+    }
+
+
+
 
     //private void OpenDoor()
     //{
