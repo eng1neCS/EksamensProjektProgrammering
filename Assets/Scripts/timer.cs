@@ -9,21 +9,21 @@ public class timer : MonoBehaviour
     [SerializeField] TextMeshProUGUI Timertext;
     float elapsedTime;
     
-    bool winCanvasActive = false;
-
 
     void Update()
     {
-        Invoke("Timer", 0f);
+        //        Invoke("Timer", 0f);
         //Hvis wincanvas er aktiv, så stop timeren.
-        if (winCanvasActive == true)
+        if (GameManager.Instance != null && !GameManager.Instance.winCanvasActive)
         {
-            CancelInvoke("Timer");
+            Timer();
+            //CancelInvoke("Timer");
         }
     }
 
     public void Timer()
     {
+        Debug.Log("Timer is running");
         elapsedTime += Time.deltaTime;
         int minutes = Mathf.FloorToInt(elapsedTime / 60);
         int seconds = Mathf.FloorToInt(elapsedTime % 60);

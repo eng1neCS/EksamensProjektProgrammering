@@ -2002,7 +2002,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1236056627356397333, guid: 4b4b0842c743c854d8aacaaf1f459fd9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 180
+      value: 402.99
       objectReference: {fileID: 0}
     - target: {fileID: 1236056627356397333, guid: 4b4b0842c743c854d8aacaaf1f459fd9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2020,9 +2020,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Timertext
       objectReference: {fileID: 0}
+    - target: {fileID: 5196394985963449613, guid: 4b4b0842c743c854d8aacaaf1f459fd9, type: 3}
+      propertyPath: Win_Canvas
+      value: 
+      objectReference: {fileID: 956982737}
+    - target: {fileID: 8272387832401429868, guid: 4b4b0842c743c854d8aacaaf1f459fd9, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8272387832401429868, guid: 4b4b0842c743c854d8aacaaf1f459fd9, type: 3}
       propertyPath: m_fontSize
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272387832401429868, guid: 4b4b0842c743c854d8aacaaf1f459fd9, type: 3}
+      propertyPath: m_margin.y
+      value: 0.00018310547
       objectReference: {fileID: 0}
     - target: {fileID: 8272387832401429868, guid: 4b4b0842c743c854d8aacaaf1f459fd9, type: 3}
       propertyPath: m_fontSizeBase
@@ -2032,10 +2044,14 @@ PrefabInstance:
       propertyPath: m_HorizontalAlignment
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5196394985963449613, guid: 4b4b0842c743c854d8aacaaf1f459fd9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4820142879798541515, guid: 4b4b0842c743c854d8aacaaf1f459fd9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1768598523}
   m_SourcePrefab: {fileID: 100100000, guid: 4b4b0842c743c854d8aacaaf1f459fd9, type: 3}
 --- !u!1 &712996110
 GameObject:
@@ -5597,6 +5613,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3bd41a3f95b86045ac774e55d47479c, type: 3}
+--- !u!1 &1207516724 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4820142879798541515, guid: 4b4b0842c743c854d8aacaaf1f459fd9, type: 3}
+  m_PrefabInstance: {fileID: 706288492}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1222715490
 GameObject:
   m_ObjectHideFlags: 0
@@ -9786,6 +9807,31 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1236056627356397333, guid: 4b4b0842c743c854d8aacaaf1f459fd9, type: 3}
   m_PrefabInstance: {fileID: 706288492}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1768598521 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8272387832401429868, guid: 4b4b0842c743c854d8aacaaf1f459fd9, type: 3}
+  m_PrefabInstance: {fileID: 706288492}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207516724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &1768598523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207516724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1d5f207431f454ea1ad3c29ce012c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::timer
+  Win_Canvas: {fileID: 956982737}
+  Timertext: {fileID: 1768598521}
 --- !u!1 &1770881102
 GameObject:
   m_ObjectHideFlags: 0
