@@ -4330,7 +4330,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 7
+      m_TileSpriteIndex: 10
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -4885,13 +4885,13 @@ Tilemap:
     m_Data: {fileID: -1972770647, guid: bc0b6e8783bfd8849bce6e926874c081, type: 3}
   - m_RefCount: 6
     m_Data: {fileID: 6727609306051089370, guid: bc0b6e8783bfd8849bce6e926874c081, type: 3}
-  - m_RefCount: 355
+  - m_RefCount: 354
     m_Data: {fileID: -1409106264, guid: bc0b6e8783bfd8849bce6e926874c081, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -1200704690, guid: bc0b6e8783bfd8849bce6e926874c081, type: 3}
-  - m_RefCount: 20
+  - m_RefCount: 21
     m_Data: {fileID: 1573058444, guid: bc0b6e8783bfd8849bce6e926874c081, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: -1992411933, guid: bc0b6e8783bfd8849bce6e926874c081, type: 3}
@@ -10396,8 +10396,8 @@ GameObject:
   - component: {fileID: 1824110780}
   - component: {fileID: 1824110784}
   - component: {fileID: 1824110783}
-  - component: {fileID: 1824110782}
   - component: {fileID: 1824110781}
+  - component: {fileID: 1824110785}
   m_Layer: 0
   m_Name: Water
   m_TagString: Untagged
@@ -10458,20 +10458,6 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
---- !u!114 &1824110782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824110779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dff6379f5262d8458206704d59768a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Water
-  level: Bane_3
-  playerID: P2
 --- !u!483693784 &1824110783
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -10745,6 +10731,20 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1824110785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824110779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 996a216d38e87ce4f833dde507d92cb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Lava
+  level: Bane_3
+  playerID: P2
 --- !u!1 &2046087208
 GameObject:
   m_ObjectHideFlags: 0

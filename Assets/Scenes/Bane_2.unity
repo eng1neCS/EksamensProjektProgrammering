@@ -191,8 +191,8 @@ GameObject:
   - component: {fileID: 225042009}
   - component: {fileID: 225042013}
   - component: {fileID: 225042012}
-  - component: {fileID: 225042011}
   - component: {fileID: 225042010}
+  - component: {fileID: 225042014}
   m_Layer: 4
   m_Name: Water
   m_TagString: Untagged
@@ -253,20 +253,6 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
---- !u!114 &225042011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 225042008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dff6379f5262d8458206704d59768a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Water
-  level: Bane_2
-  playerID: P2
 --- !u!483693784 &225042012
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -420,6 +406,20 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &225042014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225042008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 996a216d38e87ce4f833dde507d92cb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Lava
+  level: Bane_2
+  playerID: P2
 --- !u!1001 &245345695
 PrefabInstance:
   m_ObjectHideFlags: 0
