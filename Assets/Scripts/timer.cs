@@ -23,7 +23,7 @@ public class timer : MonoBehaviour
 
     public void Timer()
     {
-        Debug.Log("Timer is running");
+        
         elapsedTime += Time.deltaTime;
         int minutes = Mathf.FloorToInt(elapsedTime / 60);
         int seconds = Mathf.FloorToInt(elapsedTime % 60);
