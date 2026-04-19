@@ -5265,6 +5265,10 @@ PrefabInstance:
       value: Timertext
       objectReference: {fileID: 0}
     - target: {fileID: 8272387832401429868, guid: 4b4b0842c743c854d8aacaaf1f459fd9, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8272387832401429868, guid: 4b4b0842c743c854d8aacaaf1f459fd9, type: 3}
       propertyPath: m_fontSize
       value: 100
       objectReference: {fileID: 0}
