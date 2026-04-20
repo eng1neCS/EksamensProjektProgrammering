@@ -10,18 +10,9 @@ public class Lava : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        
-        
-            if (collision.GetComponent<MovementScript>().PlayerID == playerID)
-            {
-                 SceneManager.LoadScene(level);
-            }
-
-
-        
-     
-
-      
+        if (collision.GetComponent<MovementScript>().PlayerID == playerID)
+        {
+            SceneManager.LoadScene(level);
+        }
     }
-
-   }
+}
